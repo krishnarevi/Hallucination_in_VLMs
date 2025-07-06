@@ -1,1 +1,1 @@
-# visual_illustration_analysis
+# Hallucination in VLMs  in the context of procedural knowledge
