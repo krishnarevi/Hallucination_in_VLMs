@@ -145,8 +145,8 @@ if __name__ == '__main__':
     clip_model.eval()
 
     # Define paths using pathlib for better handling
-    output_directory = Path('./output/sample') 
-    dataset_json_path = output_directory / 'sample_data.json'
+    output_directory = Path('./output/sd21')#Path('./output/sample') 
+    dataset_json_path = output_directory / 'dataset_processed.json'#'sample_data.json' # 
 
     # Create output directory if it doesn't exist
     output_directory.mkdir(parents=True, exist_ok=True)

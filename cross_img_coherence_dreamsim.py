@@ -61,8 +61,9 @@ def calculate_dreamsim_coherence(output_dir, dreamsim_model, dreamsim_preprocess
             # It expects batched tensors
             similarity_score = dreamsim_model(img1_tensor, img2_tensor).item()
             
-            distance = 1 - similarity_score # Convert similarity to distance
-            pairwise_dreamsim_distances.append(distance)
+            #distance = 1 - similarity_score # Convert similarity to distance
+            #pairwise_dreamsim_distances.append(distance)
+            pairwise_dreamsim_distances.append(similarity_score)
             
         if pairwise_dreamsim_distances: 
             average_task_coherence = np.mean(pairwise_dreamsim_distances)
@@ -94,7 +95,7 @@ if __name__ == '__main__':
         traceback.print_exc()
         exit(1)
     
-    output_directory =  './output/sample' # <-- IMPORTANT: Set this path
+    output_directory =  './output/sd21' # './output/sample'
 
     # Pass the dreamsim model object and the preprocess function
     coherence_score = calculate_dreamsim_coherence(output_directory, dreamsim_model_obj, dreamsim_preprocess_func, device)

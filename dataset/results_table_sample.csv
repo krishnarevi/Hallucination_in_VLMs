@@ -1,0 +1,5 @@
+Model,DreamSim Score,CLIP Score
+Ours,0.55,0.31
+SD2.1,0.4,0.33
+aMUSEd,0.45,0.25
+DALL-E Mini,0.32,0.32
