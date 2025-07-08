@@ -1,15 +1,6 @@
 # Evaluating Hallucinations in Text-to-Image Models for Procedural Knowledge Generation
 
-
-
-This project investigates the ability of state-of-the-art text-to-image models to generate step-by-step visual content for procedural tasks in the recipe domain. It focuses on evaluating:
-
-- Semantic alignment between text instructions and generated images
-- Visual consistency across sequential steps
-
-The goal is to identify hallucinations and compare the capabilities of different generative models.
-
-
+This project investigates the ability of state-of-the-art text-to-image models to generate step-by-step visual content for procedural tasks in the recipe domain. The goal is to identify hallucinations and compare the capabilities of different generative models.
 
 ## Objectives
 
