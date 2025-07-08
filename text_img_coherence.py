@@ -47,17 +47,17 @@ def calculate_clip_score(
 ) -> float:
     """
     Calculates the average CLIP score for text-image alignment across all tasks.
+    The scores are scaled to be between 0 and 1.
 
     Args:
         dataset_path (Path): The path to the main JSON file (e.g., 'dataset_processed.json').
         image_base_dir (Path): The base directory containing the task subdirectories
-                                (e.g., 'output/sample').
         model (CLIPModel): The pre-trained CLIP model.
         processor (CLIPProcessor): The CLIP processor for text and images.
         device (str): The device to run the model on ('cuda' or 'cpu').
 
     Returns:
-        float: The aggregated average CLIP score.
+        float: The aggregated average CLIP score (0-1 range).
     """
     all_clip_scores = []
     
@@ -66,7 +66,6 @@ def calculate_clip_score(
         return 0.0
 
     for task_id_str, task_data in tqdm(dataset_processed.items(), desc="Processing tasks for CLIP score"):
-        # Ensure task_id is treated as a string as it comes from JSON keys
         task_dir = image_base_dir / task_id_str 
 
         image_files = _get_image_files(task_dir)
@@ -85,7 +84,7 @@ def calculate_clip_score(
         num_images = len(image_files)
         captions = captions[:num_images]
 
-        # This check is now more for logging/debugging, as we've aligned the lists.
+        # This check is now more for logging/debugging
         if len(captions) != num_images:
             logging.warning(f"After aligning to {num_images} images, caption count is {len(captions)} for task '{task_id_str}'. There might be an issue with the input data.")
             # We proceed with the minimum length to be safe
@@ -102,13 +101,18 @@ def calculate_clip_score(
 
                 with torch.no_grad():
                     outputs = model(**inputs)
-                    logits_per_image = outputs.logits_per_image
+                    logits_per_image = outputs.logits_per_image # This is typically scaled by 100
                     score = logits_per_image.item()
-                    all_clip_scores.append(score)
+                    
+                    # Normalize to 0-1 range.
+                    # Since logits_per_image are typically 100 * cosine_similarity (and clipped at 0),
+                    # dividing by 100 gives a score between 0 and 1.
+                    normalized_score = max(0.0, score / 100.0)
+                    all_clip_scores.append(normalized_score)
 
             except IndexError:
                 logging.error(f"Index out of bounds for captions/images in task '{task_id_str}'. "
-                              "This might indicate an issue with caption-image correspondence.")
+                                 "This might indicate an issue with caption-image correspondence.")
                 continue
             except FileNotFoundError:
                 logging.error(f"Image file not found: '{img_file_path}' in task '{task_id_str}'. Skipping.")
@@ -144,11 +148,8 @@ if __name__ == '__main__':
         
     clip_model.eval()
 
-    # Define paths using pathlib for better handling
-    output_directory = Path('./output/sd21')#Path('./output/sample') 
-    dataset_json_path = output_directory / 'dataset_processed.json'#'sample_data.json' # 
-
-    # Create output directory if it doesn't exist
+    output_directory = Path('./output/sd21')#Path('./output/StackedDiff') #Path('./output/sd21')  #Path('./output/flux_schnell')#Path('./output/sample') 
+    dataset_json_path = output_directory / 'dataset_250.json'#'sample_data.json' # 
     output_directory.mkdir(parents=True, exist_ok=True)
 
     logging.info(f"Starting CLIP score calculation for output directory: {output_directory}")

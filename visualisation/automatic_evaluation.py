@@ -2,9 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-df = pd.read_csv(r"D:\Uni\LangNVision\Project\Hallucination_in_VLMs\dataset\results_table_sample.csv")
+df = pd.read_csv(r"D:\Uni\LangNVision\Project\Hallucination_in_VLMs\output\results_table.csv")
 
-colors = ['purple', 'green', 'blue', 'orange'] 
+colors = [ 'green', 'blue', 'orange'] 
 plt.figure(figsize=(8, 6)) 
 
 for i, row in df.iterrows():
