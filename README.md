@@ -1,6 +1,6 @@
 # Evaluating Hallucinations in Text-to-Image Models for Procedural Knowledge Generation
 
-<img src="path/to/your/image.png" alt="Example output" width="100%">
+
 
 This project investigates the ability of state-of-the-art text-to-image models to generate step-by-step visual content for procedural tasks in the recipe domain. It focuses on evaluating:
 
@@ -9,7 +9,7 @@ This project investigates the ability of state-of-the-art text-to-image models t
 
 The goal is to identify hallucinations and compare the capabilities of different generative models.
 
----
+
 
 ## Objectives
 
@@ -19,7 +19,7 @@ The goal is to identify hallucinations and compare the capabilities of different
   - Visual consistency between steps
 - Compare these metrics across multiple models
 
----
+
 
 ## Dataset
 
@@ -30,7 +30,7 @@ The goal is to identify hallucinations and compare the capabilities of different
   - Each task contains 4–6 natural-language steps
   - Based on the refined dataset from [_Generating Coherent Sequences of Visual Illustrations for Real-World Manual Tasks_](https://openreview.net/forum?id=H1lFqT4YwS), with additional modifications for model compatibility
 
----
+
 
 ## Text-to-Image Models
 
@@ -40,7 +40,7 @@ The goal is to identify hallucinations and compare the capabilities of different
 | **Stable Diffusion 2.1 (SD2.1)** | Open-source diffusion model used as a strong baseline |
 | **Flux 1**             | Developed by **Black Forest Labs**, optimized for fast generation |
 
----
+
 
 ## Image Generation Pipeline
 
@@ -48,7 +48,7 @@ The goal is to identify hallucinations and compare the capabilities of different
 - Non-stacked models generate images sequentially using a loop.
 - Stacked Diffusion uses a hierarchical process to generate context-aware image sequences.
 
----
+
 
 ## Evaluation Metrics
 
@@ -57,20 +57,19 @@ The goal is to identify hallucinations and compare the capabilities of different
 | **CLIPScore** | Text-image semantic alignment     | [CLIP](https://openai.com/research/clip) / OpenCLIP |
 | **DreamSim**  | Visual consistency between steps | [DreamSim](https://dreamsim.mit.edu/) |
 
----
 
 ## Results
 
 | Model             | DreamSim Score | CLIPScore |
 |------------------|----------------|-----------|
-| **Stacked Diffusion** | 0.47           | 0.27      |
-| **SD2.1**             | 0.41           | 0.31      |
+| **Stacked Diffusion** | **0.47**          | 0.27      |
+| **SD2.1**             | 0.41           | **0.31**      |
 | **Flux-1**            | 0.44           | 0.30      |
 
 - Stacked Diffusion performs best in maintaining visual consistency.
 - SD2.1 achieves the highest alignment with textual instructions.
+<img src="assets/sample_result.png" alt="Example output" width="50%">
 
----
 
 ## References
 
