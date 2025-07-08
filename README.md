@@ -19,7 +19,7 @@ This project investigates the ability of state-of-the-art text-to-image models t
 - **Details**:
   - 250 recipe tasks
   - Each task contains 4–6 natural-language steps
-  - Based on the refined dataset from [_Generating Coherent Sequences of Visual Illustrations for Real-World Manual Tasks_](https://openreview.net/forum?id=H1lFqT4YwS), with additional modifications for model compatibility
+  - Based on the refined dataset from the paper 'Generating Coherent Sequences of Visual Illustrations for Real-World Manual Tasks', with additional modifications for model compatibility
 
 
 
@@ -27,7 +27,7 @@ This project investigates the ability of state-of-the-art text-to-image models t
 
 | Model Name             | Description |
 |------------------------|-------------|
-| **Stacked Diffusion**  | From [*Generating Illustrated Instructions with Stacked Diffusion Models*](https://arxiv.org/abs/2306.16431) |
+| **Stacked Diffusion**  | based on the paper 'Generating Illustrated Instructions with Stacked Diffusion Models' |
 | **Stable Diffusion 2.1 (SD2.1)** | Open-source diffusion model used as a strong baseline |
 | **Flux 1**             | Developed by **Black Forest Labs**, optimized for fast generation |
 
