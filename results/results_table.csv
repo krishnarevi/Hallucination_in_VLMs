@@ -1,4 +1,4 @@
-Model,DreamSim Score,CLIP Score
-Stacked Diffusion,0.47,0.27
-SD2.1,0.41,0.31
-Flux-Schnell,0.44,0.3
+Model,DreamSim Score,CLIP Score,VQA Score
+Stacked Diffusion,0.47,0.27,0.21
+SD2.1,0.41,0.31,0.23
+Flux-Schnell,0.44,0.3,0.22
