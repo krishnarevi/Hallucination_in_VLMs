@@ -29,7 +29,7 @@ This project investigates the ability of state-of-the-art text-to-image models t
 |------------------------|-------------|
 | **Stacked Diffusion**  | based on the paper 'Generating Illustrated Instructions with Stacked Diffusion Models' |
 | **Stable Diffusion 2.1 (SD2.1)** | Open-source diffusion model used as a strong baseline |
-| **Flux 1**             | Developed by **Black Forest Labs**, optimized for fast generation |
+| **Flux-1**             | Developed by **Black Forest Labs**, optimized for fast generation |
 
 
 
