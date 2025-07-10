@@ -87,7 +87,7 @@ if __name__ == '__main__':
         traceback.print_exc()
         exit(1)
     
-    output_directory =  './output/sd21' # './output/sample'#'./output/StackedDiff'#'./output/flux_schnell'
+    output_directory = './output/sample20/StackedDiff'#Path('./output/sd21')#Path('./output/StackedDiff') #Path('./output/sd21')  #Path('./output/flux_schnell')#Path('./output/sample') 
 
     # Pass the dreamsim model object and the preprocess function
     perceptual_distance = calculate_perceptual_distance(output_directory, model, preprocess, device)

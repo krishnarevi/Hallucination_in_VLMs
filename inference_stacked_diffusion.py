@@ -13,9 +13,9 @@ cfg = {}
 cfg['manual_steps'] = True
 cfg['gpu_number'] = '0'
 cfg['device'] = f'cuda:{cfg["gpu_number"]}'
-cfg['save_dir'] = './output/StackedDiff'#'./output/sample'#'./output'
+cfg['save_dir'] = './output/sample20/StackedDiff'#'./output/sample'#'./output'
 cfg['ip_dir'] = './dataset'
-cfg['json_file'] =  'dataset_250.json'#'sample_data.json'# 'dataset_processed.json'
+cfg['json_file'] =  'dataset_25.json'#'sample_data.json'# 'dataset_processed.json'
 # Ensure the save directory exists
 os.makedirs(cfg['save_dir'], exist_ok=True)
 

@@ -148,8 +148,8 @@ if __name__ == '__main__':
         
     clip_model.eval()
 
-    output_directory = Path('./output/sd21')#Path('./output/StackedDiff') #Path('./output/sd21')  #Path('./output/flux_schnell')#Path('./output/sample') 
-    dataset_json_path = output_directory / 'dataset_250.json'#'sample_data.json' # 
+    output_directory = Path('./output/sample20/StackedDiff')#Path('./output/sample20/StackedDiff')#Path('./output/sd21')#Path('./output/StackedDiff') #Path('./output/sd21')  #Path('./output/flux_schnell')#Path('./output/sample') 
+    dataset_json_path = output_directory / 'dataset_25.json'#'sample_data.json' # 
     output_directory.mkdir(parents=True, exist_ok=True)
 
     logging.info(f"Starting CLIP score calculation for output directory: {output_directory}")

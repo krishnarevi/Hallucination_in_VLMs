@@ -53,6 +53,7 @@ cover/
 #folders
 old/
 output/
+dataset/
 
 # Translations
 *.mo
