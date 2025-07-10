@@ -47,7 +47,7 @@ This project investigates the ability of state-of-the-art text-to-image models t
 |---------------|----------------------------------------------|---------------------------------------------------------------|
 | **CLIPScore** | Text-image semantic alignment                | [CLIP](https://openai.com/research/clip)         |
 | **DreamSim**  | Visual consistency between sequential steps  | [DreamSim](https://dreamsim.mit.edu/)                         |
-| **VQA Score** | Image's ability to answer step-related questions | [ViLT](https://huggingface.co/dandelin/vilt-b32-finetuned-vqa), [BLIP](https://huggingface.co/Salesforce/blip-vqa), etc. |
+| **VQA Score** | Image's ability to answer step-related questions | [ViLT](https://huggingface.co/dandelin/vilt-b32-finetuned-vqa) |
 
 
 
