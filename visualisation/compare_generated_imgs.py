@@ -6,7 +6,7 @@ from tqdm import tqdm
 
 # --- Configuration ---
 # Base directory where all your model output folders reside
-BASE_OUTPUT_DIR = Path(r"D:\Uni\LangNVision\Project\Hallucination_in_VLMs\output\Sample")
+BASE_OUTPUT_DIR = Path(r"D:\Uni\LangNVision\Project\Hallucination_in_VLMs\output\Sample20")
 
 # List of model output folder names relative to BASE_OUTPUT_DIR
 # These names will also be used as column headers.
@@ -19,7 +19,7 @@ MODEL_FOLDERS = [
 
 # Name of the JSON file containing step information
 # Assumed to be located in the first MODEL_FOLDERS directory (e.g., BASE_OUTPUT_DIR/sample_flux/sample_data.json)
-DATASET_JSON_NAME = "sample_data.json"
+DATASET_JSON_NAME = "dataset_25.json"
 
 # Output directory for the generated comparison images
 COMPARISON_OUTPUT_DIR = Path("./comparison_results")
