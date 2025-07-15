@@ -29,7 +29,7 @@ This project investigates the ability of state-of-the-art text-to-image models t
 |------------------------|-------------|
 | **Stacked Diffusion**  | based on the paper 'Generating Illustrated Instructions with Stacked Diffusion Models' |
 | **Stable Diffusion 2.1 (SD2.1)** | Open-source diffusion model used as a strong baseline |
-| **Flux 1**             | Developed by **Black Forest Labs**, optimized for fast generation |
+| **Flux-1**             | Developed by **Black Forest Labs**, optimized for fast generation |
 
 
 
@@ -47,7 +47,7 @@ This project investigates the ability of state-of-the-art text-to-image models t
 |---------------|----------------------------------------------|---------------------------------------------------------------|
 | **CLIPScore** | Text-image semantic alignment                | [CLIP](https://openai.com/research/clip)         |
 | **DreamSim**  | Visual consistency between sequential steps  | [DreamSim](https://dreamsim.mit.edu/)                         |
-| **VQA Score** | Image's ability to answer step-related questions | [ViLT](https://huggingface.co/dandelin/vilt-b32-finetuned-vqa), [BLIP](https://huggingface.co/Salesforce/blip-vqa), etc. |
+| **VQA Score** | Image's ability to answer step-related questions | [ViLT](https://huggingface.co/dandelin/vilt-b32-finetuned-vqa) |
 
 
 
@@ -57,12 +57,12 @@ This project investigates the ability of state-of-the-art text-to-image models t
 |--------------------|----------------|------------|-----------|
 | **Stacked Diffusion** | **0.47**        | 0.27       | 0.21      |
 | **SD2.1**             | 0.41           | **0.31**    | **0.23**  |
-| **Flux-Schnell**      | 0.44           | 0.30       | 0.22      |
+| **Flux-1**      | 0.44           | 0.30       | 0.22      |
 
 
 - Stacked Diffusion excels at maintaining visual consistency across steps (DreamSim = 0.47), making it well-suited for producing coherent multi-step visuals.
 - SD2.1 shows the strongest alignment with textual instructions, achieving the highest CLIPScore (0.31) and VQA Score (0.23), indicating it better grounds each image in the corresponding step description.
-- Flux-Schnell offers a balanced performance, with moderate scores across all metrics, suggesting a trade-off between coherence and instruction alignment.
+- Flux-1 offers a balanced performance, with moderate scores across all metrics, suggesting a trade-off between coherence and instruction alignment.
 <img src="assets/sample_result.png" alt="Example output" width="50%">
 
 
